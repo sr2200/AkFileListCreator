@@ -1,0 +1,102 @@
+{
+    "folders": [
+        {
+            "name": "AkFileListCreator",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "terminal.integrated.profiles.windows": {
+            "PowerShell": {
+                "path": [
+                    "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+                ]
+            },
+            "icon": "terminal-powershell"
+        },
+        "workbench.colorCustomizations": {
+            "editor.background": null,
+            "editor.foreground": null,
+            "editorGroup.border": null,
+            "editorLineNumber.foreground": null,
+            "editor.selectionBackground": null,
+            "errorForeground": null,
+            "_comment1": "ボタン、バッジ",
+            "button.background": null,
+            "badge.background": null,
+            "_comment2": "入力制御",
+            "input.background": null,
+            "input.border": null,
+            "input.placeholderForeground": null,
+            "_comment3": "スクロールバー",
+            "scrollbarSlider.background": null,
+            "scrollbarSlider.hoverBackground": null,
+            "_comment4": "下のステータスバー",
+            "statusBar.background": "#052e00",
+            "statusBar.foreground": null,
+            "statusBar.noFolderBackground": null,
+            "statusBar.debuggingBackground": null,
+            "statusBar.border": null,
+            "statusBarItem.prominentBackground": null,
+            "_comment5": "エクスプローラのリストやツリー",
+            "list.activeSelectionBackground": null,
+            "list.hoverBackground": null,
+            "list.invalidItemForeground": null,
+            "_comment6": "アクティビティバー（左端または右端にあるバー）",
+            "activityBar.background": null,
+            "activityBar.foreground": null,
+            "activityBar.border": null,
+            "activityBarBadge.background": null,
+            "activityBarBadge.foreground": null,
+            "_comment7": "サイドバー（エクスプローラや検索のようなビュー）",
+            "sideBar.background": null,
+            "sideBar.foreground": null,
+            "sideBar.border": null,
+            "sideBarTitle.foreground": "#ffffff",
+            "_comment8": "タブ",
+            "editorGroupHeader.tabsBackground": null,
+            "tab.activeBackground": "#415275",
+            "tab.activeForeground": null,
+            "tab.border": null,
+            "tab.activeBorder": null,
+            "tab.inactiveBackground": null,
+            "tab.inactiveForeground": null
+        },
+        "workbench.tree.indent": 12,
+        "workbench.iconTheme": "vscode-icons",
+        "debug.inlineValues": true,
+        "debug.internalConsoleOptions": "openOnSessionStart",
+        "debug.openDebug": "openOnSessionStart",
+        "window.title": "${dirty}\\${activeEditorMedium}${separator}${rootName}",
+        "editor.minimap.side": "left",
+        "editor.minimap.showSlider": "always",
+        "editor.minimap.size": "fit",
+        "editor.renderWhitespace": "all",
+        "editor.renderLineHighlight": "all",
+        "editor.renderControlCharacters": true,
+        "emmet.showSuggestionsAsSnippets": true,
+        "emmet.triggerExpansionOnTab": true,
+        "emmet.variables": {
+            "lang": "ja"
+        },
+        // "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "csharp2plantuml.inputPath": "C:\\Users\\青木恭久\\source\\repos\\AkFileListCreator\\src",
+        "csharp2plantuml.outputPath": "C:\\Users\\青木恭久\\source\\repos\\AkFileListCreator\\plantuml",
+        "plantuml.server": "http://localhost:8080",
+        "[csharp]": {
+            "editor.defaultFormatter": "ms-dotnettools.csharp"
+        },
+        "csharp2plantuml.allInOne": true,
+        "csharp2plantuml.excludePath": "obj,bin,Debug",
+        "dotnet-test-explorer.testProjectPath": "**/*Test.csproj"
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-ceintl.vscode-language-pack-ja",
+            "vscode-icons-team.vscode-icons",
+            "esbenp.prettier-vscode",
+            "editorconfig.editorconfig",
+            "fabiospampinato.vscode-todo-plus"
+        ]
+    }
+}

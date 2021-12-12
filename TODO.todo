@@ -1,0 +1,8 @@
+●Example todo file
+https://github.com/fabiospampinato/vscode-todo-plus/blob/master/resources/readme.todo
+
+☐ 'Alt+Enter' // Triggers `Todo: Toggle Box`
+✔ 'Alt+D' // Triggers `Todo: Toggle Done` @done(21-11-21 14:55)
+✘ 'Alt+C' // Triggers `Todo: Toggle Cancelled` @cancelled(21-11-21 14:55)
+☐ 'Alt+S' // Triggers `Todo: Toggle Start` @started(21-11-21 14:55)
+☐ 'Cmd/Ctrl+Shift+A' // Triggers  `Todo: Archive`

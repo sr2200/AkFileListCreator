@@ -1,0 +1,6 @@
+dotnet test --collect:"XPlat Code Coverage"
+
+dotnet test --collect:"XPlat Code Coverage" --logger:"trx;LogFilePath=./TestResults/XPlatCodeCoverage.trx"
+
+
+reportgenerator -reports:"C:\Users\青木恭久\source\repos\AkFileListCreator\test\AkFileListCreator.Test\TestResults\*\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
