@@ -11,7 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -34,14 +34,22 @@
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="165"/>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="MakeFileListButton" Grid.Column="1" Content="リスト作成" Margin="5,5,5,5" Click="MakeFileListButton_Click" />
-            <Button x:Name="OutputFileButton" Grid.Column="2" Content="書き込み" Margin="5,5,5,5" Click="OutputFileButton_Click" />
-            <Button x:Name="MakeListAndOutputButton" Grid.Column="3" Content="作成＆書込" Margin="5,5,5,5" Click="MakeListAndOutputButton_Click" />
+            <GroupBox Grid.Column="1" Header="出力形式" Margin="5,0,5,10">
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="ExcelMode" Content="Excel" GroupName="OutputMode" IsChecked="True" Checked="OutputMode_Checked" />
+                    <RadioButton x:Name="CvsMode" Content="CSV" GroupName="OutputMode" Checked="OutputMode_Checked" />
+                    <RadioButton x:Name="JsonMode" Content="JSON" GroupName="OutputMode" Checked="OutputMode_Checked" />
+                </StackPanel>
+            </GroupBox>
+            <Button x:Name="MakeFileListButton" Grid.Column="2" Content="リスト作成" Margin="5,10,5,10" Click="MakeFileListButton_Click" />
+            <Button x:Name="OutputFileButton" Grid.Column="3" Content="書き込み" Margin="5,10,5,10" Click="OutputFileButton_Click" />
+            <Button x:Name="MakeListAndOutputButton" Grid.Column="4" Content="作成＆書込" Margin="5,10,5,10" Click="MakeListAndOutputButton_Click" />
         </Grid>
     </Grid>
 </Ak.Fw.Wpf:AkWindowBase>

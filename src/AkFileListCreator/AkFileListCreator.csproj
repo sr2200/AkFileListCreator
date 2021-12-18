@@ -5,12 +5,27 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
+    <PackageIcon>書類.png</PackageIcon>
+    <ApplicationIcon>Icon1.ico</ApplicationIcon>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Icon1.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Ak.Fw.Wpf" Version="1.0.4" />
     <PackageReference Include="ClosedXML" Version="0.95.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="書類.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

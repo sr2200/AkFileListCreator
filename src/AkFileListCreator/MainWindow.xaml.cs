@@ -34,6 +34,8 @@ namespace AkFileListCreator
     {
         private readonly Dictionary<PageEnum, AkPageBase> pageDic = new Dictionary<PageEnum, AkPageBase>();
 
+        public string OutputMode { get; internal set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -83,7 +85,7 @@ namespace AkFileListCreator
             {
                 FileName = this.OutputFilePath.Text,
                 InitialDirectory = dirPath,
-                Filter = "Excelファイル(*.xlsx)|*.xlsx|CSVファイル(*.csv)|*.csv|全てのファイル(*.*)|*.*"
+                Filter = "Excelファイル(*.xlsx)|*.xlsx|CSVファイル(*.csv)|*.csv|JSONファイル(*.json)|*.json|全てのファイル(*.*)|*.*"
             };
             var result = dialog.ShowDialog();
 
@@ -160,14 +162,6 @@ namespace AkFileListCreator
             }
 
             var fInfo = new FileInfo(path);
-            if (".xlsx" != fInfo.Extension)
-            {
-                MessageBox.Show("Excelファイル(*.xlsx)以外は現時点ではサポート外です。",
-                                "警告",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Warning);
-                return;
-            }
 
             DataTable tbl = ((FileListPage)pageDic[PageEnum.FileList]).Data;
 
@@ -180,8 +174,7 @@ namespace AkFileListCreator
                 return;
             }
 
-            var excel = new ExcelUtil();
-            excel.WriteExcel(path, tbl);
+            Write(path, tbl);
 
             MessageBox.Show("ファイル出力完了",
                 "情報",
@@ -235,16 +228,6 @@ namespace AkFileListCreator
                 return;
             }
 
-            var fInfo = new FileInfo(outputPath);
-            if (".xlsx" != fInfo.Extension)
-            {
-                MessageBox.Show("Excelファイル(*.xlsx)以外は現時点ではサポート外です。",
-                                "警告",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Warning);
-                return;
-            }
-
             var tbl = prg.MakeList(lst);
 
             ((FileListPage)pageDic[PageEnum.FileList]).Data = tbl;
@@ -259,13 +242,71 @@ namespace AkFileListCreator
                 return;
             }
 
-            var excel = new ExcelUtil();
-            excel.WriteExcel(outputPath, tbl);
+            Write(outputPath, tbl);
 
             MessageBox.Show("ファイルリスト作成完了＆ファイル出力完了",
                 "情報",
                 MessageBoxButton.OK,
                 MessageBoxImage.Information);
+        }
+
+        /// <summary>
+        /// ファイルに出力する
+        /// </summary>
+        /// <param name="path">出力ファイルパス</param>
+        /// <param name="tbl">出力データ</param>
+        private void Write(string path, DataTable tbl)
+        {
+            switch (OutputMode)
+            {
+                case "Excel":
+                    var excel = new ExcelUtil();
+                    excel.WriteExcel(path, tbl);
+                    break;
+                case "CSV":
+                    var csv = new CsvUtil();
+                    csv.WriteCsv(path, tbl);
+                    break;
+                case "JSON":
+                    var json = new JsonUtil();
+                    json.WriteJson(path, tbl);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void OutputMode_Checked(object sender, RoutedEventArgs e)
+        {
+            var radioButton = sender as RadioButton;
+            OutputMode = (string)radioButton.Content;
+
+            var path = this.OutputFilePath.Text;
+
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                return;
+            }
+
+            var fInfo = new FileInfo(path);
+            var ext = fInfo.Extension;
+
+            switch (OutputMode)
+            {
+                case "Excel":
+                    path = path.Replace(ext, ".xlsx");
+                    break;
+                case "CSV":
+                    path = path.Replace(ext, ".csv");
+                    break;
+                case "JSON":
+                    path = path.Replace(ext, ".json");
+                    break;
+                default:
+                    break;
+            }
+
+            this.OutputFilePath.Text = path;
         }
     }
 }

@@ -1,23 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{12F0ED77-3936-4E62-9435-6FCF69B0B4E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkFileListCreator", "src\AkFileListCreator\AkFileListCreator.csproj", "{013025C6-13D1-4ECF-A73C-4F0ABEA166FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkFileListCreator", "src\AkFileListCreator\AkFileListCreator.csproj", "{013025C6-13D1-4ECF-A73C-4F0ABEA166FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4DCFEC36-9B6B-42A6-A8C4-118B8F9E41F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkFileListCreator.Tests", "test\AkFileListCreator.Tests\AkFileListCreator.Tests.csproj", "{71A062E1-4292-4795-A641-41A5C0664D06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AkFileListCreator.Tests", "test\AkFileListCreator.Tests\AkFileListCreator.Tests.csproj", "{71A062E1-4292-4795-A641-41A5C0664D06}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AkFileListCreater.Installer", "src\AkFileListCreater.Installer\AkFileListCreater.Installer.vdproj", "{BAED2F72-0D27-40AE-8FAB-B42C7771A4F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{013025C6-13D1-4ECF-A73C-4F0ABEA166FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -28,9 +27,19 @@ Global
 		{71A062E1-4292-4795-A641-41A5C0664D06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71A062E1-4292-4795-A641-41A5C0664D06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71A062E1-4292-4795-A641-41A5C0664D06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAED2F72-0D27-40AE-8FAB-B42C7771A4F9}.Debug|Any CPU.ActiveCfg = Debug
+		{BAED2F72-0D27-40AE-8FAB-B42C7771A4F9}.Release|Any CPU.ActiveCfg = Release
+		{BAED2F72-0D27-40AE-8FAB-B42C7771A4F9}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{013025C6-13D1-4ECF-A73C-4F0ABEA166FA} = {12F0ED77-3936-4E62-9435-6FCF69B0B4E6}
 		{71A062E1-4292-4795-A641-41A5C0664D06} = {4DCFEC36-9B6B-42A6-A8C4-118B8F9E41F1}
+		{BAED2F72-0D27-40AE-8FAB-B42C7771A4F9} = {12F0ED77-3936-4E62-9435-6FCF69B0B4E6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88BB3B0C-08E0-4105-A96C-78C6BA53FCE8}
 	EndGlobalSection
 EndGlobal
