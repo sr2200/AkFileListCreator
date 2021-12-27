@@ -15,7 +15,7 @@
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer>
+        <ScrollViewer IsTabStop="False">
             <Grid Grid.Row="0" x:Name="panel"/>
         </ScrollViewer>
 
@@ -26,8 +26,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="AddButton" Grid.Column="0" Content="行追加" Margin="5,5,5,5" Click="AddButton_Click"/>
-            <Button x:Name="DelButton" Grid.Column="1" Content="行削除" Margin="5,5,5,5" Click="DelButton_Click"/>
+            <Button x:Name="AddButton" 
+                    Grid.Column="0" 
+                    Content="行追加"
+                    TabIndex="110"
+                    Margin="5,5,5,5" 
+                    Click="AddButton_Click"/>
+            <Button x:Name="DelButton" 
+                    Grid.Column="1" 
+                    Content="行削除" 
+                    TabIndex="120"
+                    Margin="5,5,5,5" 
+                    Click="DelButton_Click"/>
         </Grid>
     </Grid>
 
