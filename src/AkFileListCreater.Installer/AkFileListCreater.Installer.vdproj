@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_2AD3DC7A6CB94681BC9DEBF990343AF2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_DD1234B65043412EAB3CC4C030C52839"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -37,6 +43,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -53,6 +75,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -84,6 +114,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2AD3DC7A6CB94681BC9DEBF990343AF2"
+            {
+            "SourcePath" = "8:..\\AkFileListCreator\\Icon1.ico"
+            "TargetName" = "8:Icon1.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_6E49870C03FB4AB6894C82CCCF468C5B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DD1234B65043412EAB3CC4C030C52839"
             {
             "SourcePath" = "8:..\\AkFileListCreator\\Icon1.ico"
@@ -113,7 +163,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_6E49870C03FB4AB6894C82CCCF468C5B"
             {
             "Name" = "8:#1916"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:DesktopFolder"
@@ -124,7 +174,7 @@
             "{1525181F-901A-416C-8A58-119130FE478E}:_99144CB4F990485C9B3B3669F2A9ECE0"
             {
             "Name" = "8:#1919"
-            "AlwaysCreate" = "11:FALSE"
+            "AlwaysCreate" = "11:TRUE"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Property" = "8:ProgramMenuFolder"
@@ -168,7 +218,7 @@
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:1.1.0"
         "Manufacturer" = "8:SR2200"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -281,7 +331,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E7452AA932E44C7A879C17B328B92F0C"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_328BAA9BB5944910A1385F64FFE9C97B"
             {
             "Name" = "8:ファイル一覧作成機"
             "Arguments" = "8:"
@@ -289,10 +339,24 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_EB33D02F754E4E1EB72F47A528D9B65C"
+            "Target" = "8:_6E49870C03FB4AB6894C82CCCF468C5B"
             "Folder" = "8:_6E49870C03FB4AB6894C82CCCF468C5B"
-            "WorkingFolder" = "8:_E420493451ED4E079ED859A3F93A72BA"
-            "Icon" = "8:_DD1234B65043412EAB3CC4C030C52839"
+            "WorkingFolder" = "8:_6E49870C03FB4AB6894C82CCCF468C5B"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_344CEB8F79C44A4694C97F62737A46BA"
+            {
+            "Name" = "8:ファイル一覧作成機"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_99144CB4F990485C9B3B3669F2A9ECE0"
+            "Folder" = "8:_99144CB4F990485C9B3B3669F2A9ECE0"
+            "WorkingFolder" = "8:_99144CB4F990485C9B3B3669F2A9ECE0"
+            "Icon" = "8:_2AD3DC7A6CB94681BC9DEBF990343AF2"
             "Feature" = "8:"
             }
         }
