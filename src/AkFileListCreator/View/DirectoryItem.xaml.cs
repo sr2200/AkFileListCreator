@@ -22,10 +22,14 @@ namespace AkFileListCreator.View
     /// </summary>
     public partial class DirectoryItem : AkUserControlBase
     {
+        internal delegate void FocusEventHandler(object sender, DirectoryItemEventArgs e);
+        internal event FocusEventHandler FocusEvent;
+
         public DirectoryItem()
         {
             InitializeComponent();
         }
+
 
         private void DirectoryPathButton_Click(object sender, RoutedEventArgs e)
         {
@@ -35,6 +39,27 @@ namespace AkFileListCreator.View
         public string GetFolderPath()
         {
             return this.DirectoryPathTextBox.Text;
+        }
+
+        private void DirectoryPathTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            FocusEvent.Invoke(this, new DirectoryItemEventArgs { eventType = DirectoryItemEventArgs.EventType.Got });
+        }
+
+        private void DirectoryPathTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            FocusEvent.Invoke(this, new DirectoryItemEventArgs { eventType = DirectoryItemEventArgs.EventType.Lost });
+        }
+
+        internal class DirectoryItemEventArgs : EventArgs
+        {
+            public enum EventType
+            {
+                Got,
+                Lost
+            }
+
+            public EventType eventType { get; set; }
         }
     }
 }

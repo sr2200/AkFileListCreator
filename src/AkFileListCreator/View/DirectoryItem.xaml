@@ -18,9 +18,14 @@
                    Margin="5,5,5,5" 
                    VerticalAlignment="Center" />
         <TextBox x:Name="DirectoryPathTextBox" Grid.Column="1" 
-                 Margin="5,5,5,5"/>
+                 Margin="5,5,5,5"
+                 TabIndex="10"
+                 GotFocus="DirectoryPathTextBox_GotFocus" 
+                 LostFocus="DirectoryPathTextBox_LostFocus"/>
         <Button x:Name="DirectoryPathButton" Grid.Column="2" 
                 Content="…" 
-                Margin="5,5,5,5" Click="DirectoryPathButton_Click"/>
+                TabIndex="20"
+                Margin="5,5,5,5" 
+                Click="DirectoryPathButton_Click"/>
     </Grid>
 </Ak.Fw.Wpf:AkUserControlBase>

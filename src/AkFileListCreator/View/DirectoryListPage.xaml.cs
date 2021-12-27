@@ -29,6 +29,8 @@ namespace AkFileListCreator.View
             CreateRow();
         }
 
+        public DirectoryItem FocusCtrl { get; set; }
+
         private void CreateRow()
         {
             var row = new RowDefinition();
@@ -36,6 +38,27 @@ namespace AkFileListCreator.View
             panel.RowDefinitions.Add(row);
 
             var item = new DirectoryItem();
+            item.FocusEvent += (sender, e) => {
+                switch (e.eventType)
+                {
+                    case DirectoryItem.DirectoryItemEventArgs.EventType.Got:
+                        FocusCtrl = (DirectoryItem)sender;
+                        break;
+                    default:
+                        break;
+                }
+            };
+
+            var rowIndex = panel.Children.Count;
+            Grid.SetRow(item, rowIndex);
+            panel.Children.Add(item);
+        }
+
+        private void AddRow(DirectoryItem item)
+        {
+            var row = new RowDefinition();
+            row.Height = new GridLength(30);
+            panel.RowDefinitions.Add(row);
 
             var rowIndex = panel.Children.Count;
             Grid.SetRow(item, rowIndex);
@@ -49,7 +72,26 @@ namespace AkFileListCreator.View
 
         private void DelButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("未実装");
+            if(null != FocusCtrl)
+            {
+                panel.Children.Remove(FocusCtrl);
+
+                List<DirectoryItem> lst = new List<DirectoryItem>();
+                foreach (DirectoryItem item in panel.Children)
+                {
+                    lst.Add(item);
+                }
+
+                panel.Children.Clear();
+                panel.RowDefinitions.Clear();
+
+                foreach (DirectoryItem item in lst)
+                {
+                    AddRow(item);
+                }
+
+                FocusCtrl = null;
+            }
         }
     }
 }
